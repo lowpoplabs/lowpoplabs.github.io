@@ -12,15 +12,14 @@
   ║    version  shown under the title                                        ║
   ║    kind     small orange label (category)                                ║
   ║    blurb    one or two sentences; <b>…</b> highlights in white           ║
-  ║    flyer    Sites page holding the flyer, e.g. "/fakefriends" (resolved  ║
-  ║             against SITE below) — or a full https:// URL. Either way it  ║
-  ║             opens in a new tab: Sites' embed sandbox blocks navigating   ║
-  ║             the page itself. "" = greyed "Flyer coming soon" button.     ║
-  ║                                                                          ║
-  ║  SITE must be the site's PUBLISHED address. Sites serves embeds from a   ║
-  ║  different origin, so a bare "/page" link would point at the wrong host. ║
+  ║    github   GitHub repo ("" = not released yet). When set it is the      ║
+  ║             primary button and the flyer drops to a secondary one.       ║
+  ║    flyer    the flyer page on lowpoplabs.github.io (full URL, or a       ║
+  ║             "/path" resolved against SITE). "" = "Flyer coming soon"     ║
+  ║             until a repo exists, then nothing.                           ║
+  ║             Links open in a new tab: Sites' embed sandbox blocks         ║
+  ║             navigating the page that holds the embed.                    ║
   ║    umod     uMod page link ("" = not on uMod)                            ║
-  ║    github   GitHub repo / releases link ("" = hidden)                    ║
   ║    status   "" | "umod" | "pending"   (adds a badge; "" = no badge)      ║
   ║                                                                          ║
   ║  Suggested iframe height in Sites: ~900px for 9 cards (3 rows of 3).       ║
@@ -33,39 +32,39 @@ const SITE = "https://sites.google.com/view/lowpoplabs";
 const PLUGINS = [
   { name: "FakeFriends", version: "0.19.1", kind: "NPC residents",
     blurb: "Persistent, player-like <b>NPC residents</b> for low-pop servers: recurring characters with personas, play schedules, sleeper bodies, home regions and real deaths. Friendship not included.",
-    flyer: "/fakefriends", umod: "", github: "", status: "" },
+    flyer: "https://lowpoplabs.github.io/flyers/FakeFriends.html", umod: "", github: "", status: "" },
 
   { name: "HelpMenu", version: "1.0.0", kind: "Player UI",
     blurb: "A <b>/help</b> browser for every player-facing plugin on the server: descriptions, commands and how-to steps, filtered to what each player can actually use.",
-    flyer: "/helpmenu", umod: "", github: "", status: "" },
+    flyer: "https://lowpoplabs.github.io/flyers/HelpMenu.html", umod: "", github: "", status: "" },
 
   { name: "IslandTaxi", version: "1.5.5", kind: "Transport",
     blurb: "<b>Dial a taxi from any phone</b>, pick a vehicle and a destination, get delivered. Boombox stations included.",
-    flyer: "/islandtaxi", umod: "", github: "", status: "" },
+    flyer: "https://lowpoplabs.github.io/flyers/IslandTaxi.html", umod: "", github: "", status: "" },
 
   { name: "LockedCrate", version: "1.1.0", kind: "Loot",
     blurb: "Swipe a <b>green keycard</b> to unlock a Hackable Locked Crate on the spot. Card durability burns like a door swipe.",
-    flyer: "/lockedcrate", umod: "", github: "", status: "" },
+    flyer: "https://lowpoplabs.github.io/flyers/LockedCrate.html", umod: "", github: "", status: "" },
 
   { name: "LootableObjects", version: "1.1.1", kind: "Loot",
     blurb: "Makes static world objects — <b>substation transformers</b> and the like — lootable, with configurable loot tables.",
-    flyer: "/lootableobjects", umod: "", github: "", status: "" },
+    flyer: "https://lowpoplabs.github.io/flyers/LootableObjects.html", umod: "", github: "", status: "" },
 
   { name: "PublicWorks", version: "2.8.1", kind: "Utilities",
     blurb: "A <b>Public Works office</b> on the island. Pay the clerk scrap to keep power, water, gas, trains and <b>Cobalt air cover</b> running — for everyone. Things break; somebody has to fix them.",
-    flyer: "/publicworks", umod: "", github: "", status: "pending" },
+    flyer: "https://lowpoplabs.github.io/flyers/PublicWorks.html", umod: "", github: "", status: "pending" },
 
   { name: "RustApartmentUnlock", version: "1.0.5", kind: "Housing",
     blurb: "The Apartment Complex without the turrets. <b>Renters furnish their own room</b> with live-preview placement; admins place deployables anywhere.",
-    flyer: "/rustapartmentunlock", umod: "", github: "", status: "" },
+    flyer: "https://lowpoplabs.github.io/flyers/RustApartmentUnlock.html", umod: "", github: "", status: "" },
 
   { name: "RustQuests", version: "2.20.2", kind: "Story",
     blurb: "<b>Story-driven quests</b>: hidden trader shops, lore notes, puzzles and hunting chains that change every wipe.",
-    flyer: "/rustquests", umod: "", github: "", status: "" },
+    flyer: "https://lowpoplabs.github.io/flyers/RustQuests.html", umod: "", github: "", status: "" },
 
   { name: "Scrapbook", version: "0.5.0", kind: "Items",
     blurb: "A <b>pocket scrapbook</b>: collect pamphlets, photos and paper notes into a book, page through them, and pull fresh copies for frames or friends.",
-    flyer: "/scrapbook", umod: "", github: "", status: "" },
+    flyer: "https://lowpoplabs.github.io/flyers/Scrapbook.html", umod: "", github: "", status: "" },
 ];
 </script>
 <!-- ═══════════════════════ nothing below needs editing ═══════════════════════ -->
@@ -126,9 +125,10 @@ const PLUGINS = [
       <div class="ver">v${p.version}</div>
       <p>${p.blurb}</p>
       <div class="row">
-        ${p.flyer ? `<a class="btn solid" target="_blank" rel="noopener" href="${p.flyer.startsWith("/") ? SITE + p.flyer : p.flyer}">View flyer</a>` : `<span class="btn off">Flyer coming soon</span>`}
+        ${p.github ? `<a class="btn solid" target="_blank" rel="noopener" href="${p.github}">GitHub</a>` : ``}
+        ${p.flyer ? `<a class="btn${p.github ? "" : " solid"}" target="_blank" rel="noopener" href="${p.flyer.startsWith("/") ? SITE + p.flyer : p.flyer}">${p.github ? "Flyer" : "View flyer"}</a>`
+                  : (p.github ? `` : `<span class="btn off">Flyer coming soon</span>`)}
         ${p.umod ? `<a class="btn" target="_blank" rel="noopener" href="${p.umod}">uMod</a>` : ``}
-        ${p.github ? `<a class="btn" target="_blank" rel="noopener" href="${p.github}">GitHub</a>` : ``}
       </div>`;
     grid.appendChild(el);
   });
