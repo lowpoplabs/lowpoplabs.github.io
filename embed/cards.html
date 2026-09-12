@@ -1,0 +1,135 @@
+<!--
+  ╔══════════════════════════════════════════════════════════════════════════╗
+  ║  LOWPOPLABS PLUGIN CARDS — Google Sites embed                            ║
+  ║                                                                          ║
+  ║  GENERATED: the PLUGINS list below comes from ../../projects.yaml via    ║
+  ║  `python release.py sites`. Edit the manifest, regenerate, then in Sites ║
+  ║  double-click the embed block → </> edit code → select all → paste this  ║
+  ║  whole file → Next → Insert. Don't hand-edit the list; it gets replaced. ║
+  ║                                                                          ║
+  ║  Each plugin:                                                            ║
+  ║    name     card title                                                   ║
+  ║    version  shown under the title                                        ║
+  ║    kind     small orange label (category)                                ║
+  ║    blurb    one or two sentences; <b>…</b> highlights in white           ║
+  ║    flyer    Sites page holding the flyer, e.g. "/fakefriends" (resolved  ║
+  ║             against SITE below) — or a full https:// URL. Either way it  ║
+  ║             opens in a new tab: Sites' embed sandbox blocks navigating   ║
+  ║             the page itself. "" = greyed "Flyer coming soon" button.     ║
+  ║                                                                          ║
+  ║  SITE must be the site's PUBLISHED address. Sites serves embeds from a   ║
+  ║  different origin, so a bare "/page" link would point at the wrong host. ║
+  ║    umod     uMod page link ("" = not on uMod)                            ║
+  ║    github   GitHub repo / releases link ("" = hidden)                    ║
+  ║    status   "" | "umod" | "pending"   (adds a badge; "" = no badge)      ║
+  ║                                                                          ║
+  ║  Suggested iframe height in Sites: ~900px for 9 cards (3 rows of 3).       ║
+  ╚══════════════════════════════════════════════════════════════════════════╝
+-->
+<script>
+// Published site address, no trailing slash. Publish → "Web address" tells you this.
+const SITE = "https://sites.google.com/view/lowpoplabs";
+
+const PLUGINS = [
+  { name: "FakeFriends", version: "0.19.1", kind: "NPC residents",
+    blurb: "Persistent, player-like <b>NPC residents</b> for low-pop servers: recurring characters with personas, play schedules, sleeper bodies, home regions and real deaths. Friendship not included.",
+    flyer: "/fakefriends", umod: "", github: "", status: "" },
+
+  { name: "HelpMenu", version: "1.0.0", kind: "Player UI",
+    blurb: "A <b>/help</b> browser for every player-facing plugin on the server: descriptions, commands and how-to steps, filtered to what each player can actually use.",
+    flyer: "/helpmenu", umod: "", github: "", status: "" },
+
+  { name: "IslandTaxi", version: "1.5.5", kind: "Transport",
+    blurb: "<b>Dial a taxi from any phone</b>, pick a vehicle and a destination, get delivered. Boombox stations included.",
+    flyer: "/islandtaxi", umod: "", github: "", status: "" },
+
+  { name: "LockedCrate", version: "1.1.0", kind: "Loot",
+    blurb: "Swipe a <b>green keycard</b> to unlock a Hackable Locked Crate on the spot. Card durability burns like a door swipe.",
+    flyer: "/lockedcrate", umod: "", github: "", status: "" },
+
+  { name: "LootableObjects", version: "1.1.1", kind: "Loot",
+    blurb: "Makes static world objects — <b>substation transformers</b> and the like — lootable, with configurable loot tables.",
+    flyer: "/lootableobjects", umod: "", github: "", status: "" },
+
+  { name: "PublicWorks", version: "2.8.1", kind: "Utilities",
+    blurb: "A <b>Public Works office</b> on the island. Pay the clerk scrap to keep power, water, gas, trains and <b>Cobalt air cover</b> running — for everyone. Things break; somebody has to fix them.",
+    flyer: "/publicworks", umod: "", github: "", status: "pending" },
+
+  { name: "RustApartmentUnlock", version: "1.0.5", kind: "Housing",
+    blurb: "The Apartment Complex without the turrets. <b>Renters furnish their own room</b> with live-preview placement; admins place deployables anywhere.",
+    flyer: "/rustapartmentunlock", umod: "", github: "", status: "" },
+
+  { name: "RustQuests", version: "2.20.2", kind: "Story",
+    blurb: "<b>Story-driven quests</b>: hidden trader shops, lore notes, puzzles and hunting chains that change every wipe.",
+    flyer: "/rustquests", umod: "", github: "", status: "" },
+
+  { name: "Scrapbook", version: "0.5.0", kind: "Items",
+    blurb: "A <b>pocket scrapbook</b>: collect pamphlets, photos and paper notes into a book, page through them, and pull fresh copies for frames or friends.",
+    flyer: "/scrapbook", umod: "", github: "", status: "" },
+];
+</script>
+<!-- ═══════════════════════ nothing below needs editing ═══════════════════════ -->
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+  :root{--ink:#221c15;--panel:#2b241b;--panel2:#322a20;--line:#453a2b;--cobalt:#d14b28;--cobalt-dim:#8a3a22;--amber:#d9a441;
+    --head:#eae2d1;--body:#b0a48e;--mute:#7d715c;--green:#8fae5a;
+    --display:"Anton","Haettenschweiler",Impact,"Arial Narrow",sans-serif;--mono:"Share Tech Mono","Consolas",monospace;--sans:"Barlow","Segoe UI",Arial,sans-serif}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:var(--ink);color:var(--body);font-family:var(--sans)}
+  .wrap{padding:26px 36px 36px}
+  .eyebrow{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase}
+  .eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+  .eyebrow .n{color:var(--mute)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:18px}
+  @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:600px){.grid{grid-template-columns:1fr}}
+  .card{position:relative;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--cobalt-dim);padding:18px 18px 16px;display:flex;flex-direction:column;overflow:hidden;
+    transition:transform .18s ease,border-color .18s ease,background .18s ease;animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+  .card:hover{transform:translateY(-3px);border-top-color:var(--cobalt);background:var(--panel2)}
+  .card::after{content:attr(data-num);position:absolute;right:14px;top:8px;font-family:var(--display);font-size:56px;line-height:1;color:#3a3125;pointer-events:none}
+  .k{font-family:var(--mono);font-size:10px;letter-spacing:.18em;color:var(--amber);text-transform:uppercase;display:flex;gap:10px;align-items:center;position:relative}
+  .st{display:inline-block;border:1px solid;padding:1px 6px}
+  .st.umod{color:var(--green)}.st.pending{color:var(--cobalt)}
+  h3{font-family:var(--display);font-size:24px;letter-spacing:.5px;color:var(--head);margin:10px 0 2px;text-transform:uppercase;position:relative;word-break:break-word;padding-right:56px}
+  h3.long{font-size:19px;letter-spacing:.3px}
+  .ver{font-family:var(--mono);font-size:11px;color:var(--mute);letter-spacing:.1em}
+  p{font-size:14px;line-height:1.5;color:var(--body);margin:10px 0 14px;flex:1}
+  p b{color:var(--head);font-weight:600}
+  .row{display:flex;gap:8px;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;padding:9px 14px;
+    border:1px solid var(--cobalt);color:var(--cobalt);transition:all .15s}
+  .btn:hover{background:var(--cobalt);color:var(--head)}
+  .btn.solid{background:var(--cobalt);color:var(--head);font-weight:700}.btn.solid:hover{background:#e25a36}
+  .btn.off{border-color:var(--line);color:var(--mute);pointer-events:none}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  @media (max-width:640px){.wrap{padding:20px 18px}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+  <div class="eyebrow"><span>Plugin catalogue</span><span class="n" id="count"></span></div>
+  <div class="grid" id="grid"></div>
+</div>
+
+<script>
+  const BADGE = { umod: "On uMod", pending: "uMod · Pending" };
+  const grid = document.getElementById("grid");
+  document.getElementById("count").textContent = "— " + PLUGINS.length + " plugins";
+  PLUGINS.forEach((p, i) => {
+    const el = document.createElement("div");
+    el.className = "card"; el.dataset.num = String(i + 1).padStart(2, "0");
+    el.style.animationDelay = (i * 0.06) + "s";
+    el.innerHTML = `
+      <div class="k"><span>${p.kind || "Rust plugin"}</span>${p.status && BADGE[p.status] ? `<span class="st ${p.status}">${BADGE[p.status]}</span>` : ""}</div>
+      <h3 class="${p.name.length > 14 ? "long" : ""}">${p.name}</h3>
+      <div class="ver">v${p.version}</div>
+      <p>${p.blurb}</p>
+      <div class="row">
+        ${p.flyer ? `<a class="btn solid" target="_blank" rel="noopener" href="${p.flyer.startsWith("/") ? SITE + p.flyer : p.flyer}">View flyer</a>` : `<span class="btn off">Flyer coming soon</span>`}
+        ${p.umod ? `<a class="btn" target="_blank" rel="noopener" href="${p.umod}">uMod</a>` : ``}
+        ${p.github ? `<a class="btn" target="_blank" rel="noopener" href="${p.github}">GitHub</a>` : ``}
+      </div>`;
+    grid.appendChild(el);
+  });
+</script>

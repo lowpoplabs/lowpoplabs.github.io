@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LowPopLabs · Rust server plugins</title>
+<meta name="description" content="Free, MIT-licensed plugins for low-pop Rust servers. Every one has a flyer.">
+<meta property="og:title" content="LowPopLabs · Rust server plugins">
+<meta property="og:image" content="https://lowpoplabs.github.io/assets/banner.png">
+<link rel="icon" href="assets/logo.png">
+<style>
+  html,body{margin:0;background:#221c15}
+  iframe{display:block;width:100%;border:0;background:#221c15;overflow:hidden}
+</style>
+</head><body>
+<iframe title="header" src="embed/header.html" data-h="360" scrolling="no"></iframe>
+<iframe title="plugins" src="embed/cards.html" data-h="900" scrolling="no"></iframe>
+<iframe title="footer" src="embed/footer.html" data-h="100" scrolling="no"></iframe>
+<script>
+  document.querySelectorAll("iframe").forEach(f => {
+    f.style.height = f.dataset.h + "px";
+    const fit = () => {
+      try {
+        const d = f.contentDocument, kids = [...d.body.children];
+        const h = Math.ceil(Math.max(d.body.scrollHeight, ...kids.map(e => e.getBoundingClientRect().bottom)));
+        if (h > 40) f.style.height = h + "px";
+      } catch (e) { /* file:// preview: keep the fallback height */ }
+    };
+    f.addEventListener("load", () => { fit(); try { new ResizeObserver(fit).observe(f.contentDocument.body); } catch (e) {} });
+  });
+</script>
+</body></html>
