@@ -137,7 +137,7 @@ const PLUGINS = [
       <div class="row">
         ${p.github ? `<a class="btn solid" target="_blank" rel="noopener" href="${p.github}">GitHub</a>` : ``}
         ${p.flyer ? `<a class="btn${p.github ? "" : " solid"}" target="_blank" rel="noopener" href="${p.flyer.startsWith("/") ? SITE + p.flyer : p.flyer}">${p.github ? "Flyer" : "View flyer"}</a>`
-                  : (p.github ? `` : `<span class="btn off">Flyer coming soon</span>`)}
+                  : (p.github || (p.section && p.section !== "Rust server plugins") ? `` : `<span class="btn off">Flyer coming soon</span>`)}
         ${p.umod ? `<a class="btn" target="_blank" rel="noopener" href="${p.umod}">uMod</a>` : ``}
       </div>`;
     grid.appendChild(el);
