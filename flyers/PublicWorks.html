@@ -86,13 +86,18 @@
   /* site wrapper — overrides the flyer's own body sizing so it sits centred on the site ground */
   html{background:#221c15!important;padding-top:40px}
   body{margin:0 auto!important;max-width:100%}
-  .lpl-bar{position:fixed;top:0;left:0;right:0;height:40px;z-index:9;display:flex;justify-content:space-between;align-items:center;gap:12px;
-    background:#221c15;border-bottom:1px solid #453a2b;padding:10px 16px;font-family:"Share Tech Mono","Consolas",monospace;
-    font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7d715c}
+  .lpl-bar{position:fixed;top:0;left:0;right:0;height:40px;z-index:9;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    background:#221c15;border-bottom:1px solid #453a2b;padding:0 16px;font-family:"Share Tech Mono","Consolas",monospace;
+    font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#7d715c;white-space:nowrap}
+  .lpl-bar.bottom{position:static;border-bottom:0;border-top:1px solid #453a2b;margin-top:24px}
   .lpl-bar a{color:#d9a441;text-decoration:none} .lpl-bar a:hover{color:#d14b28}
+  .lpl-bar .mid{flex:1;text-align:center;overflow:hidden;text-overflow:ellipsis}
+  .lpl-bar .links{display:flex;gap:14px}
+  .lpl-bar .dl{color:#eae2d1;border:1px solid #d14b28;padding:4px 10px} .lpl-bar .dl:hover{background:#d14b28;color:#eae2d1}
+  @media (max-width:640px){.lpl-bar{font-size:9px;gap:10px} .lpl-bar .mid{display:none}}
 </style>
 </head><body>
-<div class="lpl-bar"><a href="https://lowpoplabs.github.io/">← LowPopLabs catalogue</a><span>PublicWorks · flyer</span></div>
+<div class="lpl-bar"><a href="https://lowpoplabs.github.io/">← LowPopLabs catalogue</a><span class="mid">PublicWorks · flyer</span><span class="links"></span></div>
 <div class="topline">
   <span>RUST SERVER PLUGIN</span>
   <span class="mid">DEPT. OF ISLAND INFRASTRUCTURE</span>
@@ -264,4 +269,5 @@ delivery at the supermarket — and yes, the vodka is drinkable. Civilization, b
   <span class="hl">YOUR SCRAP AT WORK</span>
   <span>PAY YOUR BILL. FIX A FAULT. EVERYONE RIDES.</span>
 </div>
+<div class="lpl-bar bottom"><a href="https://lowpoplabs.github.io/">← LowPopLabs catalogue</a><span class="mid">PublicWorks · flyer</span><span class="links"></span></div>
 </body></html>
