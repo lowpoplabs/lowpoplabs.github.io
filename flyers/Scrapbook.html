@@ -12,6 +12,8 @@
 <link rel="icon" href="../assets/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
+  @page{size:920px 2020px;margin:0}
+
   :root{
     /* Shared LowPopLabs flyer palette (FakeFriends → RustQuests lineage):
        dark warm brown ground, cream display, vermilion accent, warm amber secondary. */
@@ -225,7 +227,13 @@
 </head><body>
 <div class="lpl-bar"><a href="https://lowpoplabs.github.io/">← LowPopLabs catalogue</a><span class="mid">Scrapbook · flyer</span><span class="links"><a class="gh" href="https://github.com/lowpoplabs/Scrapbook">GitHub repo ↗</a><a class="dl" href="https://github.com/lowpoplabs/Scrapbook/releases/latest">Download v0.5.1</a></span></div>
 <title>Scrapbook — Keep Every Print, Spend No Slots</title>
+<!-- PDF render (single full-bleed page, sized by the @page rule below):
+     "C:\Program Files\Google\Chrome\Application\chrome.exe" --headless=new --disable-gpu --no-pdf-header-footer
+       --print-to-pdf="..\Scrapbook-Flyer.pdf" file:///D:/Apps/Scrapbook-RustPlugin/docs/flyer.html
+     If content grows, remeasure document.body.scrollHeight at 920px wide and update @page. -->
 <style>
+  @page{size:920px 2020px;margin:0}
+
   :root{
     /* Shared LowPopLabs flyer palette (FakeFriends → RustQuests lineage):
        dark warm brown ground, cream display, vermilion accent, warm amber secondary. */
@@ -427,7 +435,7 @@
   <div class="classif">
     <span>Found Property · Please Return To No One</span>
     <span class="tag">// every print &amp; paper kept //</span>
-    <span>File SB-0.4</span>
+    <span>File SB-0.5</span>
   </div>
 
   <header class="mast">
