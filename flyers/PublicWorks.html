@@ -12,7 +12,7 @@
 <link rel="icon" href="../assets/logo.png">
 <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <style>
-  @page { size: 7.5in 42.6in; margin: 0; }
+  @page { size: 7.5in 47.2in; margin: 0; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
     --bg: #16130f;
@@ -101,7 +101,7 @@
 <div class="topline">
   <span>RUST SERVER PLUGIN</span>
   <span class="mid">DEPT. OF ISLAND INFRASTRUCTURE</span>
-  <span>V2.9.0</span>
+  <span>V2.11.0</span>
 </div>
 
 <h1 class="logo">PUBLIC<span>WORKS</span></h1>
@@ -126,6 +126,8 @@ delivery at the supermarket — and yes, the vodka is drinkable. Civilization, b
   <div><span class="pw">Public Works:</span> a passing stranger called in a resupply at the Airfield — the <span class="svc-o">air traffic controller is on break</span>, next locked crate ready in 10 minutes.</div>
   <div><span class="pw">Public Works:</span> Cobalt air defence has flagged you as hostile for 2m (<span class="svc-r">shot the patrol helicopter</span>).</div>
   <div><span class="pw">Public Works:</span> <span class="svc-r">Cobalt Accounts</span> has put the <span class="svc-o">Protection</span> account on hold — payment delayed, air cover suspended. Settle the bill at the office: <span class="svc-g">50 scrap</span>.</div>
+  <div><span class="pw">Public Works:</span> work order filed for the pole at grid K12: <span class="svc-g">250 scrap</span>. Pay it at the office, or call <span class="svc-g">55596757</span> (+10 scrap) and a crew will come out. <span class="svc-g">/pw pole cancel</span> withdraws it.</div>
+  <div><span class="pw">Public Works:</span> work order paid (-260 scrap). A crew is on its way to grid K12 — about 32 seconds out.</div>
   <div><span class="pw">Public Works:</span> drone delivery is offline until the Supermarket fault is repaired — the grocery inside is still open.</div>
   <div><span class="pw">Public Works:</span> <span class="svc-g">Electricity</span> restored — emergency repairs by <span class="svc-g">a passing stranger</span> (+75 scrap).</div>
   <div><span class="pw">Public Works:</span> <span class="svc-o">Gas</span> is running low — about 55m left at current usage. Visit the office to extend it!</div>
@@ -154,6 +156,22 @@ delivery at the supermarket — and yes, the vodka is drinkable. Civilization, b
     <p>Every train on the island runs without fuel. Board, throttle, go. The subway is now public transit.</p></div>
   <div class="card"><div class="k">PROTECTION</div>
     <p>The patrol heli and Bradley go <b>reactive only</b> — they ignore everyone who leaves them alone, and Bradley <b>never drops its ground crew</b>. Shoot first, and Cobalt remembers.</p></div>
+</div>
+
+<h2>WORK ORDERS <small>V2.10 &middot; THE DEPARTMENT MAKES HOUSE CALLS</small></h2>
+<div class="cards two">
+  <div class="card"><div class="k boxed">WORK ORDER</div>
+    <h3>PICK A POLE. FILE THE PAPERWORK.</h3>
+    <p>Only some roadside poles carry a transformer you can wire into. Stand at a plain one, type <b>/pw pole</b>, and the department opens a work order for it — <b>250 scrap</b>, one per player per wipe. Nothing gets built until the bill is paid.</p></div>
+  <div class="card"><div class="k boxed">DISPATCH</div>
+    <h3>A TRUCK ACTUALLY SHOWS UP</h3>
+    <p>Pay, and a <b>department pickup</b> appears down the road, drives to your pole, and a worker climbs out. Fifteen seconds later there's a <b>transformer on the pole</b> and the truck is gone. It can't be shot, looted or borrowed. Road blocked? The order gets fitted anyway.</p></div>
+  <div class="card"><div class="k boxed">PUBLIC HOOKUP</div>
+    <h3>SAME TRANSFORMER, PLUS A LADDER</h3>
+    <p>It's the very transformer the game hangs on its own poles — same ports, same output, live while Electricity is paid. Plain poles can't be climbed, so the crew <b>leaves two indestructible ladders</b>. Anyone can wire in: it's public works, not private works. Gone at wipe.</p></div>
+  <div class="card"><div class="k boxed">555-WORKS</div>
+    <h3>CALL IT IN</h3>
+    <p>Dial <b>5559-6757</b> from any telephone — it's in the directory — and the services panel opens where you stand. Pay for a day of service, a work order or a Cobalt billing hold for a <b>10 scrap convenience fee</b>. Repair contracts are still handed out in person.</p></div>
 </div>
 
 <h2>CIVIC RECORD <small>V2.9 &middot; COBALT NOTICES WHO FIXES THINGS</small></h2>
@@ -244,7 +262,7 @@ delivery at the supermarket — and yes, the vodka is drinkable. Civilization, b
 <div class="cards two">
   <div class="card"><div class="k boxed">THE CLERK</div>
     <h3>ONE NPC, ZERO VIOLENCE</h3>
-    <p>An invincible, disarmed, AI-disabled clerk staffs the office (orange dot on your map). Walk up, press <b>E</b>, and the services panel opens — status lights, time remaining, and a PAY button per service. Away from the office, <b>/pwinfo</b> shows every meter, read-only. Paying your bill still takes the trip.</p></div>
+    <p>An invincible, disarmed, AI-disabled clerk staffs the office (orange dot on your map). Walk up, press <b>E</b>, and the services panel opens — status lights, time remaining, and a PAY button per service. Away from the office, <b>/pwinfo</b> shows every meter, read-only. Paying your bill takes the trip — or a <b>phone call</b>.</p></div>
   <div class="card"><div class="k boxed">THE BUCKET ECONOMY</div>
     <h3>ONE BUCKET, DRAINED BY DEMAND</h3>
     <p>Every service is a <b>shared bucket of banked time</b> — strangers' payments pour into the same bucket, capped at <b>7 days</b>. Two players sip at 1×; every extra player online opens the tap wider (+25%, capped at 3×). The panel shows <b>fuel-gauge bars</b> and time left at current usage, so everyone knows when to pass the hat. Bots don't count. Payers get named.</p></div>
