@@ -21,6 +21,8 @@
   ║             navigating the page that holds the embed.                    ║
   ║    umod     uMod page link ("" = not on uMod)                            ║
   ║    status   "" | "umod" | "pending"   (adds a badge; "" = no badge)      ║
+  ║    link     optional extra button (a project's own site), with its       ║
+  ║             text in linkLabel. From `card.link` in projects.yaml.        ║
   ║    section  group heading the card sits under (Rust plugins first)       ║
   ║                                                                          ║
   ║  Suggested iframe height in Sites: ~900px for 9 cards (3 rows of 3).       ║
@@ -89,7 +91,7 @@ const PLUGINS = [
 
   { name: "BaandwidthFarms", version: "0.1.0", kind: "Virtual pet", section: "Off-grid & hardware",
     blurb: "<b>A virtual pet that eats Wi-Fi and Bluetooth.</b> It lives on an ESP32-S3 touch watch, listens without ever connecting, and grows into one of seven animals depending on what it finds. Take it somewhere new to feed it something new.",
-    flyer: "", umod: "", github: "https://github.com/lowpoplabs/VirtualPet", status: "" },
+    flyer: "", umod: "", github: "https://github.com/lowpoplabs/VirtualPet", status: "", link: "https://lowpoplabs.github.io/VirtualPet/", linkLabel: "Install" },
 
   { name: "CabinNet", version: "0.1.1", kind: "Off-grid appliance", section: "Off-grid & hardware",
     blurb: "<b>An off-grid library in a Pelican case</b>: Wikipedia, films, ebooks and 6,800 retro games on a Fitlet2, its own Wi-Fi, a 12V LiFePO4 pack, and a live battery readout. Build notes, configs and every decision record.",
@@ -167,6 +169,7 @@ const PLUGINS = [
         ${p.flyer ? `<a class="btn${p.github ? "" : " solid"}" target="_blank" rel="noopener" href="${p.flyer.startsWith("/") ? SITE + p.flyer : p.flyer}">${p.github ? "Flyer" : "View flyer"}</a>`
                   : (p.github || (p.section && p.section !== "Rust server plugins") ? `` : `<span class="btn off">Flyer coming soon</span>`)}
         ${p.umod ? `<a class="btn" target="_blank" rel="noopener" href="${p.umod}">uMod</a>` : ``}
+        ${p.link ? `<a class="btn" target="_blank" rel="noopener" href="${p.link}">${p.linkLabel || "Site"}</a>` : ``}
       </div>`;
     grid.appendChild(el);
   });
